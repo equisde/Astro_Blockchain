@@ -1,0 +1,2 @@
+debian/bin/astrod usr/bin
+src/astrod usr/lib/astro
