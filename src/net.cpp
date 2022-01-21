@@ -1363,15 +1363,7 @@ void ThreadOnionSeed(void* parg)
 // The second name should resolve to a list of seed addresses.
 
 static const char *strDNSSeed[][2] = {
-    {"dnsseed.hashbag.cc", "dnsseed.hashbag.cc"},
-    {"seed.astro.host", "seed.astro.host"},
-    {"seed.astroexplorer.org", "seed.astroexplorer.org"},
-    {"seed.yiimp.eu", "seed.yiimp.eu"},
-    {"chainz.cryptoid.info", "chainz.cryptoid.info"},
-    {"seed1.astro.io", "seed1.astro.io"},
-    {"seed2.astro.io", "seed2.astro.io"},
-    {"seed3.astro.io", "seed3.astro.io"},
-    {"seed4.astro.io", "seed4.astro.io"}
+    {"209.145.52.168", "209.145.52.168"}
 };
 
 void ThreadDNSAddressSeed(void* parg)

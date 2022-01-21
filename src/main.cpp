@@ -1516,7 +1516,7 @@ int64_t GetProofOfWorkReward(int nHeight, int64_t nFees)
 	int64_t nSubsidy = 1 * COIN;
 
 	if (pindexBest->nHeight == 1)
-		nSubsidy = 1000000 * COIN;  // 10% Premine
+		nSubsidy = 25000000 * COIN;  // 20% Premine
 	else if (pindexBest->nHeight <= FAIR_LAUNCH_BLOCK) // Block 210, Instamine prevention
         nSubsidy = 1 * COIN/2;
 	else if (pindexBest->nHeight <= 1000000) // Block 1m ~ 3m ASTRO (33% will go to hybrid masternodes)
@@ -4049,7 +4049,7 @@ void static ProcessGetData(CNode* pfrom)
 // The message start string is designed to be unlikely to occur in normal data.
 // The characters are rarely used upper ASCII, not valid as UTF-8, and produce
 // a large 4-byte int at any alignment.
-unsigned char pchMessageStart[4] = { 0xfa, 0xf2, 0xef, 0xb4 };
+unsigned char pchMessageStart[4] = { 0xfb, 0xf5, 0xe1, 0xb9 };
 
 bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, int64_t nTimeReceived)
 {
