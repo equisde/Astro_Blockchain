@@ -30,6 +30,7 @@ echo -e "daemon=1\listen=1\rpcuser=user\rpcpassword=changethispassword" > ~/.ast
 
 echo "Back to Compiled astrod Binary Folder"
 cd ~/Astro_Blockchain/src
+
                 ;;
 2) echo 2 "Update astrod"
 echo "Updating Astro Wallet"
@@ -59,8 +60,8 @@ wget https://www.openssl.org/source/openssl-1.0.1j.tar.gz
 tar -xzvf openssl-1.0.1j.tar.gz
 cd openssl-1.0.1j
 ./config
-make depend
-sudo make install
+make depend -j$(nproc)
+sudo make install -j$(nproc)
 sudo ln -sf /usr/local/ssl/bin/openssl `which openssl`
 cd ~
 openssl version -v
@@ -72,7 +73,7 @@ git checkout master
 git pull
 
 cd src
-make OPENSSL_INCLUDE_PATH=/usr/local/ssl/include OPENSSL_LIB_PATH=/usr/local/ssl/lib -f makefile.unix
+make OPENSSL_INCLUDE_PATH=/usr/local/ssl/include OPENSSL_LIB_PATH=/usr/local/ssl/lib -f makefile.unix -j$(nproc)
 
 sudo yes | cp -rf astrod /usr/bin/
 
@@ -93,7 +94,8 @@ git checkout master
 git pull
 
 cd src
-make OPENSSL_INCLUDE_PATH=/usr/local/ssl/include OPENSSL_LIB_PATH=/usr/local/ssl/lib -f makefile.unix
+mkdir obj
+make OPENSSL_INCLUDE_PATH=/usr/local/ssl/include OPENSSL_LIB_PATH=/usr/local/ssl/lib -f makefile.unix -j$(nproc)
 
 sudo yes | cp -rf astrod /usr/bin/
 
