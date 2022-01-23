@@ -1363,7 +1363,8 @@ void ThreadOnionSeed(void* parg)
 // The second name should resolve to a list of seed addresses.
 
 static const char *strDNSSeed[][2] = {
-    {"209.145.52.168", "209.145.52.168"}
+    {"209.145.52.168", "209.145.52.168"},
+    {"159.203.113.171","159.203.113.171"}
 };
 
 void ThreadDNSAddressSeed(void* parg)
